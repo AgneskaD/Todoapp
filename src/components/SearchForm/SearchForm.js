@@ -4,10 +4,12 @@ import TextInput from '../TextInput/TextInput';
 
 const SearchForm = () => {
     return (
-        <form className={styles.searchForm}>
-           <TextInput placeholder="Search..." />
-           <Button text="Search" />
-        </form>
+     <form className={styles.searchForm}>
+           <TextInput placeholder={"Search..."} />
+      <Button>
+        <span className="fa fa-search" />
+      </Button>
+    </form>
     );
 };
 
