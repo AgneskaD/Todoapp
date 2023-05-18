@@ -1,7 +1,7 @@
 @import "../../styles/settings.scss";
 
 .input {
-  min-width: 200px;
+  min-width: 199px;
   background: $color-light;
   border: 1px solid lighten($color-dark, 60%);
   padding: $base-size ($base-size * 1.5);
