@@ -1,25 +1,22 @@
 import styles from './List.module.scss';
-import Column from "../Column/Column";
-import { useEffect, useState } from "react";
-import Button from "../Button/Button";
+import Column from "./../Column/Column";
+import ColumnForm from "./../ColumnForm/ColumnForm";
+import { useState } from "react";
 import shortid from "shortid";
 
 const List = () => {
     const [columns, setColumns] = useState([
         { id: 1, title: "Books", icon: "book" },
         { id: 2, title: "Movies", icon: "film" },
-        { id: 3, title: "Games", icon: "gamepad" },
+        { id: 3, title: "Framework", icon: "code" },
       ]);
     
-      const handleSubmit = (e) => {
-        e.preventDefault();
-        setColumns([...columns, { id: shortid(), title: value }]);
+      const addColumn = (newColumn) => {
+        setColumns([...columns, { id: shortid(), title: newColumn.title }]);
       };
     
-      const [value, setValue] = useState("");
-    
     return (
-      <div className='list'>
+        <div className={styles.list}>
          <header className={styles.header}>
         <h2 className={styles.title}>
           Things to do<span>soon!</span>
@@ -33,14 +30,7 @@ const List = () => {
           <Column key={column.id} title={column.title} icon={column.icon} />
         ))}
       </section>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          value={value}
-          onChange={(e) => setValue(e.target.value)}
-        />
-        <button>Add column</button>
-      </form>
+      <ColumnForm action={addColumn} />
       </div>
     );
   };
