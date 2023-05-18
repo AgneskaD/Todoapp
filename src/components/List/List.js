@@ -13,9 +13,9 @@ const List = () => {
         Interesting things I want to check out
       </p>
       <section className={styles.columns}>
-        <Column title="HTML" />
-        <Column title="CSS + SCSS" />
-        <Column title="JavaScript" />
+        <Column title="BOOKS" icon="book" />
+        <Column title="MOVIES" icon="film" />
+        <Column title="FRAMEWORK" icon="code"/>
       </section>
       </div>
     );
