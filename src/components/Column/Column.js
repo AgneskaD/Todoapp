@@ -1,4 +1,5 @@
 import styles from "./Column.module.scss";
+import Card from "../Card/Card";
 
 const Column = (props) => {
   return (
@@ -7,6 +8,11 @@ const Column = (props) => {
         <span className={styles.icon + " fa fa-" + props.icon} />
         {props.title}
       </h2>
+      <ul className={styles.cards}>
+        {props.cards.map((card) => (
+          <Card key={card.id} title={card.title} />
+        ))}
+      </ul>
     </article>
   );
 };
