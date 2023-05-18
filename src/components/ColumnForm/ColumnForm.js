@@ -17,7 +17,6 @@ const ColumnForm = (props) => {
   return (
     <form className={styles.form} onSubmit={handleSubmit}>
       <div>
-        {" "}
         <label for="title" className={styles.label}>
           Title:
         </label>
@@ -28,7 +27,6 @@ const ColumnForm = (props) => {
         />
       </div>
       <div>
-        {" "}
         <label for="icon" className={styles.label}>
           Icon:
         </label>
@@ -39,8 +37,7 @@ const ColumnForm = (props) => {
         />
       </div>
       <div className={styles.button}>
-        {" "}
-        <Button>Add column</Button>{" "}
+      <Button>Add column</Button>
       </div>
     </form>
   );
