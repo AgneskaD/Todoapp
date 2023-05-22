@@ -1,9 +1,9 @@
 import styles from "./Card.module.scss";
 
-const Card = (props) => {
+const Card = ({ title }) => {
     return (
         <div>
-          <li className={styles.card}>{props.title}</li>
+          <li className={styles.card}>{title}</li>
         </div>
       );
 };

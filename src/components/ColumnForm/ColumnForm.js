@@ -3,13 +3,13 @@ import { useState } from "react";
 import Button from "../Button/Button";
 import TextInput from "../TextInput/TextInput";
 
-const ColumnForm = (props) => {
+const ColumnForm = ({ action }) => {
     const [title, setTitle] = useState("");
     const [icon, setIcon] = useState("");
 
     const handleSubmit = (e) => {
     e.preventDefault();
-    props.action({ title: title, icon: icon });
+    action({ title, icon });
     setTitle("");
     setIcon("");
   };
