@@ -17,7 +17,7 @@ const ColumnForm = (props) => {
   return (
     <form className={styles.form} onSubmit={handleSubmit}>
       <div>
-        <label for="title" className={styles.label}>
+        <label htmlFor="title" className={styles.label}>
           Title:
         </label>
         <TextInput
@@ -27,7 +27,7 @@ const ColumnForm = (props) => {
         />
       </div>
       <div>
-        <label for="icon" className={styles.label}>
+        <label htmlFor="icon" className={styles.label}>
           Icon:
         </label>
         <TextInput
