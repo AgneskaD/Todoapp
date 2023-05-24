@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import Button from "../Button/Button";
-import styles from './SearchForm.module.scss'
+import { updateColumns } from "../../redux/store";
 import TextInput from '../TextInput/TextInput';
 
 const SearchForm = () => {
@@ -11,7 +11,7 @@ const SearchForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault(e);
-    dispatch({ type: "UPDATE_COLUMNS", payload: { title } });
+    dispatch(updateColumns({ title }));
   };
 
     return (
