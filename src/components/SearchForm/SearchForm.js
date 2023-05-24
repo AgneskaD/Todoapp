@@ -11,7 +11,7 @@ const SearchForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault(e);
-    dispatch({ type: "UPDATE_COLUMNS" });
+    dispatch({ type: "UPDATE_COLUMNS", payload: { title } });
   };
 
     return (
