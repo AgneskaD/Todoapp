@@ -7,6 +7,8 @@ export const selectFilteredCards = ({ cards, searchInput }, columnId) =>
   cards.filter(
     (card) => card.columnId === columnId && strContains(card.title, searchInput)
 
+    export const selectAllColumns = (state) => state.columns;
+    
 const reducer = (state, action) => {
   switch (action.type) {
     case "ADD_COLUMN":
