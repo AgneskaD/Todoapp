@@ -3,11 +3,14 @@ import Column from "./../Column/Column";
 import ColumnForm from "./../ColumnForm/ColumnForm";
 import { useSelector } from "react-redux";
 import { selectColumnsByList, selectListById } from "../../redux/store";
+import { useParams } from "react-router-dom";
 
 export const List = () => {
-  const listData = useSelector((state) => selectListById(state));
+  const { listId } = useParams();
+
+  const listData = useSelector((state) => selectListById(state, listId));
   const filteredColumns = useSelector((state) =>
-    selectColumnsByList(state, listData)
+  selectColumnsByList(state, listId)
   );
       
     return (

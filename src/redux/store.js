@@ -6,13 +6,12 @@ import { strContains } from "../utils/strContains";
 export const selectFilteredCards = ({ cards, searchInput }, columnId) =>
   cards.filter(
     (card) => card.columnId === columnId && strContains(card.title, searchInput)
-
+  );
     export const selectAllColumns = (state) => state.columns;
     export const selectListById = ({ lists }, listId) =>
-    lists.find((list) => list.id /* === listId */);
-  
-    export const selectColumnsByList = ({ columns }, list) =>
-    columns.filter(({ listId }) => listId === list.id);
+    lists.find((list) => list.id === listId);
+    export const selectColumnsByList = ({ columns }, id) =>
+      columns.filter(({ listId }) => listId === id);
     export const selectAllLists = (state) => state.lists;
 
 
