@@ -9,7 +9,6 @@ import {
 } from "../../redux/store";
 
 export const List = () => {
-  const columns = useSelector(selectAllColumns);
   const listData = useSelector((state) => selectListById(state));
   const filteredColumns = useSelector((state) =>
     selectColumnsByList(state, listData)
