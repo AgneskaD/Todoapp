@@ -1,6 +1,5 @@
 import styles from "./NavBar.module.scss";
 import Container from "../Container/Container";
-import { NavLink } from "../NavLink/NavLink";
 
 export const NavBar = () => {
   return (
@@ -11,9 +10,15 @@ export const NavBar = () => {
             <span className="fa fa-tasks" />
           </a>
           <ul>
-            <NavLink>home</NavLink>
-            <NavLink>favourite</NavLink>
-            <NavLink>about</NavLink>
+          <li>
+              <a href="/">Home</a>
+            </li>
+            <li>
+              <a href="favourite">Favourite</a>
+            </li>
+            <li>
+              <a href="about">About</a>
+            </li>
           </ul>
         </div>
       </Container>
