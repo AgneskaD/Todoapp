@@ -8,13 +8,21 @@ export const initialState = {
       },
       {
         id: 2,
+        listId: 1,
         title: "Movies",
         icon: "film",
       },
       {
         id: 3,
+        listId: 1,
         title: "Framework",
         icon: "code",
+      },
+      {
+        id: 4,
+        listId: 2,
+        title: "Test",
+        icon: "hashtag",
       },
     ],
     cards: [
