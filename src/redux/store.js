@@ -8,6 +8,9 @@ export const selectFilteredCards = ({ cards, searchInput }, columnId) =>
     (card) => card.columnId === columnId && strContains(card.title, searchInput)
 
     export const selectAllColumns = (state) => state.columns;
+    export const selectListById = ({ lists }, listId) =>
+    lists.find((list) => list.id === listId);
+
 
     export const addColumn = (payload) => ({ type: "ADD_COLUMN", payload });
     export const addCard = (payload) => ({ type: "ADD_CARD", payload });
