@@ -1,0 +1,29 @@
+@import "../../styles/settings.scss";
+
+.navigation {
+  background-color: darken($color-dark, 3%);
+  display: flex;
+  font-size: 24px;
+
+  div {
+    display: flex;
+    justify-content: space-between;
+    width: -webkit-fill-available;
+  }
+
+  a {
+    color: #ffffff;
+  }
+
+  ul {
+    margin: 0;
+
+    li {
+      display: inline-block;
+      a {
+        text-decoration: none;
+        padding-left: 15px;
+      }
+    }
+  }
+}
