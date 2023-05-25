@@ -13,6 +13,7 @@ export const selectFilteredCards = ({ cards, searchInput }, columnId) =>
   
     export const selectColumnsByList = ({ columns }, list) =>
     columns.filter(({ listId }) => listId === list.id);
+    export const selectAllLists = (state) => state.lists;
 
 
     export const addColumn = (payload) => ({ type: "ADD_COLUMN", payload });
