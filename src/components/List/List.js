@@ -2,11 +2,18 @@ import styles from './List.module.scss';
 import Column from "./../Column/Column";
 import ColumnForm from "./../ColumnForm/ColumnForm";
 import { useSelector } from "react-redux";
-import { selectAllColumns, selectListById } from "../../redux/store";
+import {
+  selectAllColumns,
+  selectColumnsByList,
+  selectListById,
+} from "../../redux/store";
 
 export const List = () => {
   const columns = useSelector(selectAllColumns);
-  const listData = useSelector(selectListById);
+  const listData = useSelector((state) => selectListById(state));
+  const filteredColumns = useSelector((state) =>
+    selectColumnsByList(state, listData)
+  );
       
     return (
         <div className={styles.list}>
@@ -18,7 +25,7 @@ export const List = () => {
           </header>
           <p className={styles.description}>{listData.description}</p>
       <section className={styles.columns}>
-      {columns.map((column) => (
+      {filteredColumns.map((column) => (
          <Column key={column.id} {...column} />
         ))}
       </section>
