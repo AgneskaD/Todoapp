@@ -1,7 +1,7 @@
 import styles from './Hero.module.scss';
 import { PageTitle } from "../PageTitle/PageTitle";
 
-const Hero = () => {
+export const Hero = () => {
   return (
     <div className={styles.hero}>
       
@@ -11,4 +11,4 @@ const Hero = () => {
   );
 };
 
-  export default Hero;
+  
