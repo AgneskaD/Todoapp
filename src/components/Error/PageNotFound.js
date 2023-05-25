@@ -1,5 +1,6 @@
 import { Result } from "antd";
 import { PageTitle } from "../PageTitle/PageTitle";
+import { Link } from "react-router-dom";
 import styles from "../Hero/Hero.module.scss";
 
 export const PageNotFound = () => {
@@ -16,7 +17,7 @@ export const PageNotFound = () => {
         But you can click the link below to go back to the homepage.
       </p>
       <PageTitle style={styles.title}>
-        <a href="/">E.T. GO HOME</a>
+      <Link to="/">E.T. GO HOME</Link>
       </PageTitle>
     </>
   );
