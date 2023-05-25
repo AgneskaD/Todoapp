@@ -14,7 +14,7 @@ const ColumnForm = () => {
 
     const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch({ type: "ADD_COLUMN", payload: { title, icon } });
+    dispatch(addColumn({ title, icon }));
     setTitle("");
     setIcon("");
   };
