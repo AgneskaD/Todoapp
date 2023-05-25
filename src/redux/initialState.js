@@ -2,6 +2,7 @@ export const initialState = {
     columns: [
       {
         id: 1,
+        listId: 1,
         title: "Books",
         icon: "book",
       },
