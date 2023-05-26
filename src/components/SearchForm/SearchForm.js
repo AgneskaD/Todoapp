@@ -1,12 +1,15 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import Button from "../Button/Button";
-import { updateColumns } from "../../redux/store";
+import { useDispatch, useSelector } from "react-redux";
+import { selectSearchInputValue, updateColumns } from "../../redux/store";
 import TextInput from '../TextInput/TextInput';
 
 export const SearchForm = () => {
-  const [title, setTitle] = useState("");
-
+  const searchInputValue = useSelector((state) =>
+    selectSearchInputValue(state)
+  );
+  const [title, setTitle] = useState(searchInputValue);
+  
   const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
