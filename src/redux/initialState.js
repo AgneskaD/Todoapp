@@ -30,7 +30,7 @@ export const initialState = {
         id: "1",
         columnId: "1",
         title: "Eloquent JavaScript.",
-        isFavourite: true,
+        isFavourite: false,
         },
       {
         id: "2",

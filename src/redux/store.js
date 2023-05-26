@@ -14,7 +14,7 @@ export const selectColumnsByList = ({ columns }, id) =>
 export const selectAllLists = (state) => state.lists;
 export const selectSearchInputValue = (state) => state.searchInput;
 export const selectFavouriteCard = ({ cards }) =>
-  cards.find(({ isFavourite }) => isFavourite === true);
+cards.filter(({ isFavourite }) => isFavourite === true);
 
 export const addColumn = (payload) => ({ type: "ADD_COLUMN", payload });
 export const addCard = (payload) => ({ type: "ADD_CARD", payload });
