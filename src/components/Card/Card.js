@@ -2,8 +2,8 @@ import styles from "./Card.module.scss";
 import { FavouriteButton } from "../FavouriteButton/FavouriteButton";
 import { useState } from "react";
 
-const Card = ({ title }) => {
-  const [isFavourite, setIsFavourite] = useState(false);
+const Card = ({ title, favourite }) => {
+  const [isFavourite, setIsFavourite] = useState(favourite);
 
   const toggleFavourite = () => {
     setIsFavourite(!isFavourite);
