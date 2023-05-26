@@ -2,36 +2,37 @@ import { initialState } from "./initialState";
 import { createStore } from "redux";
 import shortid from "shortid";
 import { strContains } from "../utils/strContains";
-
 export const selectFilteredCards = ({ cards, searchInput }, columnId) =>
   cards.filter(
     (card) => card.columnId === columnId && strContains(card.title, searchInput)
   );
-    export const selectAllColumns = (state) => state.columns;
-    export const selectListById = ({ lists }, listId) =>
-    lists.find((list) => list.id === listId);
-    export const selectColumnsByList = ({ columns }, id) =>
-    columns.filter(({ listId }) => listId === id);
-    export const selectAllLists = (state) => state.lists;
-    export const selectSearchInputValue = (state) => state.searchInput;
-
-    export const addColumn = (payload) => ({ type: "ADD_COLUMN", payload });
-    export const addCard = (payload) => ({ type: "ADD_CARD", payload });
-    export const updateColumns = (payload) => ({ type: "UPDATE_COLUMNS", payload });
-
-
-    const reducer = (state, action) => {
-        switch (action.type) {
-         case "ADD_COLUMN":
-         return {
+export const selectAllColumns = (state) => state.columns;
+export const selectListById = ({ lists }, listId) =>
+  lists.find((list) => list.id === listId);
+export const selectColumnsByList = ({ columns }, id) =>
+  columns.filter(({ listId }) => listId === id);
+export const selectAllLists = (state) => state.lists;
+export const selectSearchInputValue = (state) => state.searchInput;
+export const addColumn = (payload) => ({ type: "ADD_COLUMN", payload });
+export const addCard = (payload) => ({ type: "ADD_CARD", payload });
+export const updateColumns = (payload) => ({ type: "UPDATE_COLUMNS", payload });
+const reducer = (state, action) => {
+  switch (action.type) {
+    case "ADD_COLUMN":
+      return {
         ...state,
         columns: [...state.columns, { ...action.payload, id: shortid() }],
       };
-
     case "ADD_CARD":
       return {
         ...state,
         cards: [...state.cards, { ...action.payload, id: shortid() }],
+      };
+
+    case "ADD_LIST":
+      return {
+        ...state,
+        lists: [...state.lists, { ...action.payload, id: shortid() }],
       };
 
     case "UPDATE_COLUMNS":
