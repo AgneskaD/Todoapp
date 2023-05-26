@@ -1,9 +1,9 @@
 import styles from "./ColumnForm.module.scss";
 import { useDispatch } from "react-redux";
 import { useState } from "react";
-import { addColumn } from "../../redux/store";
 import { Button } from "../Button/Button";
 import { TextInput } from "../TextInput/TextInput";
+import { addColumn } from "../../redux/columnsRedux";
 
 export const ColumnForm = ({ listId }) => {
 
