@@ -12,6 +12,18 @@
   text-transform: uppercase;
 }
 
+.subtitle {
+    padding: ($base-size * 2) 0;
+    text-align: center;
+    font-size: ($base-size * 2);
+    font-style: italic;
+    font-weight: normal;
+  }
+  
+  .title + .subtitle {
+    margin-top: (-$base-size * 3);
+  }
+
 .column {
   min-height: 420px;
   max-width: 420px;

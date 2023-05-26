@@ -10,6 +10,9 @@ export const Favourite = () => {
   return (
     <div className={styles.hero}>
       <PageTitle style={styles.title}>Favourite</PageTitle>
+      <p className={styles.subtitle}>
+        There is a column with your Favourite cards
+      </p>
       <article className={styles.column}>
         {favouriteCards.map((card) => (
           <Card key={card.id} {...card} />
