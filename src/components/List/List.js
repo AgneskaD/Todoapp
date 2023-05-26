@@ -23,7 +23,6 @@ export const List = () => {
           </header>
           <p className={styles.description}>{listData.description}</p>
           <SearchForm />
-      
       <section className={styles.columns}>
       {filteredColumns.map((column) => (
          <Column key={column.id} {...column} />
