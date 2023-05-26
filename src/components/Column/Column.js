@@ -14,7 +14,7 @@ const Column = ({ icon, title, id }) => {
       </h2>
       <ul className={styles.cards}>
       {cards.map((card) => (
-            <Card key={card.id} title={card.title} favourite={card.isFavourite} />
+             <Card key={card.id} {...card} />
         ))}
       </ul>
       <hr />

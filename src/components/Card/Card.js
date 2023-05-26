@@ -1,19 +1,20 @@
 import styles from "./Card.module.scss";
 import { FavouriteButton } from "../FavouriteButton/FavouriteButton";
-import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { toggleCardFavourite } from "../../redux/store";
 
-const Card = ({ title, favourite }) => {
-  const [isFavourite, setIsFavourite] = useState(favourite);
+const Card = ({ title, isFavourite, id }) => {
+  const dispatch = useDispatch();
 
   const toggleFavourite = () => {
-    setIsFavourite(!isFavourite);
+    dispatch(toggleCardFavourite(id));
   };
 
     return (
       <div>
        <li className={styles.card}>
         {title}
-        <FavouriteButton isFavourite={isFavourite} action={toggleFavourite}>
+        <FavouriteButton favourite={isFavourite} action={toggleFavourite}>
           <span className="fa fa-star-o" />
         </FavouriteButton>
        </li>
