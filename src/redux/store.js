@@ -1,7 +1,11 @@
 import { initialState } from "./initialState";
 import { createStore, combineReducers } from "redux";
-import shortid from "shortid";
 import { strContains } from "../utils/strContains";
+import { columnsReducer } from "./columnsRedux";
+import { cardsReducer } from "./cardsRedux";
+import { listsReducer } from "./listsRedux";
+import { searchInputReducer } from "./searchInputRedux";
+
 export const selectFilteredCards = ({ cards, searchInput }, columnId) =>
   cards.filter(
     (card) => card.columnId === columnId && strContains(card.title, searchInput)
@@ -24,33 +28,6 @@ export const toggleCardFavourite = (payload) => ({
     type: "TOGGLE_CARD_FAVOURITE",
     payload,
   });
-
-  const columnsReducer = (statePart = [], action) => {
-    switch (action.type) {
-      case "ADD_COLUMN":
-        return [...statePart, { ...action.payload, id: shortid() }];
-  
-      default:
-        return statePart;
-    }
-  };
-  
-  const cardsReducer = (statePart = [], action) => {
-    switch (action.type) {
-      case "ADD_CARD":
-        return [...statePart, { ...action.payload, id: shortid() }];
-  
-      case "TOGGLE_CARD_FAVOURITE":
-        return statePart.map((card) =>
-          card.id === action.payload
-            ? { ...card, isFavourite: !card.isFavourite }
-            : card
-        );
-  
-      default:
-        return statePart;
-    }
-  };
   
   const listsReducer = (statePart = [], action) => {
     switch (action.type) {
@@ -86,5 +63,5 @@ export const toggleCardFavourite = (payload) => ({
   initialState,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
   );
-  
+
   export default store;
