@@ -5,10 +5,6 @@ import { cardsReducer } from "./cardsRedux";
 import { listsReducer } from "./listsRedux";
 import { searchInputReducer } from "./searchInputRedux";
 
-export const selectSearchInputValue = (state) => state.searchInput;
-
-export const updateColumns = (payload) => ({ type: "UPDATE_COLUMNS", payload });
-
 const subReducers = {
   columns: columnsReducer,
   cards: cardsReducer,

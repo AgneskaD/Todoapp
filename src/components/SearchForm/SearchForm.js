@@ -1,9 +1,12 @@
 import styles from "./SearchForm.module.scss";
 import { useState } from "react";
-import { useDispatch } from "react-redux";
 import { useDispatch, useSelector } from "react-redux";
 import { Button } from "../Button/Button";
 import { TextInput } from "../TextInput/TextInput";
+import {
+  selectSearchInputValue,
+  updateColumns,
+} from "../../redux/searchInputRedux";
 
 export const SearchForm = () => {
   const searchInputValue = useSelector((state) =>
