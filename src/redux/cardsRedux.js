@@ -5,6 +5,10 @@ export const cardsReducer = (statePart = [], action) => {
     case "ADD_CARD":
       return [...statePart, { ...action.payload, id: shortid() }];
 
+      case "REMOVE_CARD":
+        return [...statePart.filter((card) => card.id !== action.payload)];
+  
+
     case "TOGGLE_CARD_FAVOURITE":
       return statePart.map((card) =>
         card.id === action.payload
