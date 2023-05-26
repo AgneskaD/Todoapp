@@ -12,15 +12,10 @@ export const selectFilteredCards = ({ cards, searchInput }, columnId) =>
   export const selectFavouriteCard = ({ cards }) =>
   cards.filter(({ isFavourite }) => isFavourite === true);
 
-export const selectAllLists = (state) => state.lists;
-export const selectListById = ({ lists }, listId) =>
-  lists.find((list) => list.id === listId);
-
 export const selectSearchInputValue = (state) => state.searchInput;
 export const addColumn = (payload) => ({ type: "ADD_COLUMN", payload });
 export const addCard = (payload) => ({ type: "ADD_CARD", payload });
 export const removeCard = (payload) => ({ type: "REMOVE_CARD", payload });
-export const addList = (payload) => ({ type: "ADD_LIST", payload });
 export const toggleCardFavourite = (payload) => ({
     type: "TOGGLE_CARD_FAVOURITE",
     payload,
