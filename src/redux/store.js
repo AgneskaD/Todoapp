@@ -83,44 +83,6 @@ const reducer = (state, action) => {
       return newState;
 };
 
-// const reducer = (state, action) => {
-//   switch (action.type) {
-//     case "ADD_COLUMN":
-//       return {
-//         ...state,
-//         columns: [...state.columns, { ...action.payload, id: shortid() }],
-//       };
-
-//     case "ADD_CARD":
-//       return {
-//         ...state,
-//         cards: [...state.cards, { ...action.payload, id: shortid() }],
-//       };
-
-//     case "ADD_LIST":
-//       return {
-//         ...state,
-//         lists: [...state.lists, { ...action.payload, id: shortid() }],
-//       };
-
-//     case "UPDATE_COLUMNS":
-//       return { ...state, searchInput: action.payload.title.toLowerCase() };
-
-//     case "TOGGLE_CARD_FAVOURITE":
-//       return {
-//         ...state,
-//         cards: state.cards.map((card) =>
-//           card.id === action.payload
-//             ? { ...card, isFavourite: !card.isFavourite }
-//             : card
-//         ),
-//       };
-
-//     default:
-//       return state;
-//   }
-// };
-
 const store = createStore(
   reducer,
   initialState,
