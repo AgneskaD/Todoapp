@@ -6,6 +6,7 @@ import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { Navigate } from "react-router-dom";
 import { selectColumnsByList } from "../../redux/columnsRedux";
+import { selectListById } from '../../redux/listsRedux';
 
 export const List = () => {
   const { listId } = useParams();

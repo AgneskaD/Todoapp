@@ -2,7 +2,7 @@ import styles from "./Column.module.scss";
 import Card from "../Card/Card";
 import CardForm from "../CardForm/CardForm";
 import { useSelector } from "react-redux";
-import { selectFilteredCards } from "../../redux/store";
+import { selectFilteredCards } from "../../redux/cardsRedux";
 
 const Column = ({ icon, title, id }) => {
   const cards = useSelector((state) => selectFilteredCards(state, id));

@@ -1,4 +1,10 @@
 import shortid from "shortid";
+export const selectFilteredCards = ({ cards }, columnId) => cards.filter(card => card.columnId === columnId);
+export const selectFavouriteCards = ({ cards }) => cards.filter(card => card.isFavourite);
+
+export const toggleCardFavourite = (payload) => ({ type: "TOGGLE_CARD_FAVOURITE", payload });
+export const removeCard = payload => ({ type: "REMOVE_CARD", payload });
+export const addCard = payload => ({ type: "ADD_CARD", payload });
 
 export const cardsReducer = (statePart = [], action) => {
   switch (action.type) {
@@ -20,3 +26,5 @@ export const cardsReducer = (statePart = [], action) => {
       return statePart;
   }
 };
+// eslint-disable-next-line no-unused-expressions
+``
